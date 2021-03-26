@@ -15,11 +15,11 @@ public class UserBasket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private OutputProduct outputProduct;
 
     private float allSum;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private User user;
 }

@@ -40,6 +40,15 @@ public class AttachmentService {
     }
 
     //o'chirish
+    public void deleteById(Integer id){
+        Optional<Attachment> attachmentOptional = attachmentRepository.findById(id);
+        if (attachmentOptional.isPresent()) {
+            Attachment attachment = attachmentOptional.get();
+            Optional<AttachmentContent> byAttachmentId = attachmentContentRepository.findByAttachmentId(attachment.getId());
+            byAttachmentId.ifPresent(attachmentContent -> attachmentContentRepository.delete(attachmentContent));
+            attachmentRepository.delete(attachment);
+        }
+    }
 
     public Attachment add(MultipartHttpServletRequest request) throws IOException {
         Iterator<String> fileNames = request.getFileNames();

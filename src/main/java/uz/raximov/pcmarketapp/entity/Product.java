@@ -22,12 +22,12 @@ public class Product {
 
     private String description;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Attachment attachment;
 
     private float price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Category category;
 
     private boolean active;

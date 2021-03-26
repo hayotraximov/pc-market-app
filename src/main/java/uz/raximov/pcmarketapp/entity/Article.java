@@ -21,6 +21,6 @@ public class Article {
 
     private String urlLink;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Attachment attachment;
 }

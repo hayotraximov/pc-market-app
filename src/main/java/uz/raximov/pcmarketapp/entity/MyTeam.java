@@ -19,6 +19,6 @@ public class MyTeam {
 
     private String occupation;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Attachment attachment;
 }

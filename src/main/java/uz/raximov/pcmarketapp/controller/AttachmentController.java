@@ -2,6 +2,7 @@ package uz.raximov.pcmarketapp.controller;
 
 import org.hibernate.sql.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import uz.raximov.pcmarketapp.entity.Attachment;
@@ -21,8 +22,15 @@ public class AttachmentController {
         attachmentService.getById(id,response);
     }
 
+    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
     @PostMapping
     public Attachment add(MultipartHttpServletRequest request) throws IOException {
         return attachmentService.add(request);
+    }
+
+    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+    @DeleteMapping
+    public void deleteById(Integer id){
+        attachmentService.deleteById(id);
     }
 }

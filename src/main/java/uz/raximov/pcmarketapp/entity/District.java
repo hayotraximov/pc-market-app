@@ -18,6 +18,6 @@ public class District {
     @Column(nullable = false)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Region region;
 }

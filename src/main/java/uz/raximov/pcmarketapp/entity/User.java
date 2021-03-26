@@ -24,6 +24,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Address address;
 }

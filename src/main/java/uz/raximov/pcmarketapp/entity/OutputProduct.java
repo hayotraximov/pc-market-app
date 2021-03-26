@@ -16,7 +16,7 @@ public class OutputProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Set<Product> product;
 
     private Integer amount;

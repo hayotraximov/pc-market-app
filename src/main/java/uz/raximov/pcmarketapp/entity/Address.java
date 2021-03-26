@@ -18,6 +18,6 @@ public class Address {
     private String street;
     private String homeNumber;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private District district;
 }

@@ -18,10 +18,10 @@ public class Comments {
     @Column(nullable = false)
     private String body;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Product product;
 
     private Integer numberStars;

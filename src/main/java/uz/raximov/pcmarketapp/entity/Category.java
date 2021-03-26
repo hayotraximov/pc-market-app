@@ -19,6 +19,6 @@ public class Category {
     private String nameRu;
     private String nameEng;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Category category;
 }

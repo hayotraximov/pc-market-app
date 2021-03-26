@@ -17,7 +17,7 @@ public class Order {
 
     private String date;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private UserBasket userBasket;
 
     private String details;
