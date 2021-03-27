@@ -30,5 +30,5 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private Category category;
 
-    private boolean active;
+    private boolean active = true;
 }

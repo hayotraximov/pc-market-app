@@ -18,5 +18,8 @@ public class Charachteristics {
     @Column(nullable = false)
     private String name;
 
-    private String type;
+    private Integer size;
+
+    @ManyToOne
+    private Product product;
 }
