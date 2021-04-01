@@ -13,7 +13,7 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     @Override
     <S extends Order> S save(S s);
 
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','OPERATOR')")
+    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN')")
     @Override
     void deleteById(Integer integer);
 }
