@@ -9,11 +9,11 @@ import uz.raximov.pcmarketapp.entity.User;
 @RepositoryRestResource(path = "user")
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends User> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends User> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 }

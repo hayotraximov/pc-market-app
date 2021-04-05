@@ -8,11 +8,11 @@ import uz.raximov.pcmarketapp.entity.District;
 @RepositoryRestResource(path = "district")
 public interface DistrictRepository extends JpaRepository<District, Integer> {
 
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends District> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends District> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 }

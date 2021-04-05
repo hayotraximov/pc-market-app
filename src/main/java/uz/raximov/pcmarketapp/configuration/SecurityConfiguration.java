@@ -2,6 +2,7 @@ package uz.raximov.pcmarketapp.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -30,8 +31,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
             .csrf().disable()
             .authorizeRequests()
-            .anyRequest()
-            .authenticated()
+            .antMatchers(HttpMethod.GET,"/api/**").hasAnyRole("SUPER_ADMIN","MODERATOR","OPERATOR")
+            .antMatchers(HttpMethod.POST,"/api/**").hasAnyRole("SUPER_ADMIN","MODERATOR")
+            .antMatchers(HttpMethod.PUT,"/api/**").hasAnyRole("SUPER_ADMIN","MODERATOR")
+            .antMatchers("/api/**").hasRole("SUPER_ADMIN")
+            .anyRequest().authenticated()
             .and()
             .httpBasic();
     }

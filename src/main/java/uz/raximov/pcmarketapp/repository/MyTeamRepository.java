@@ -8,12 +8,11 @@ import uz.raximov.pcmarketapp.entity.MyTeam;
 
 @RepositoryRestResource(path = "myteam")
 public interface MyTeamRepository extends JpaRepository<MyTeam, Integer> {
-
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends MyTeam> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends MyTeam> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 }

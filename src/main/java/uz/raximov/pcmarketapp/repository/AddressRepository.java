@@ -9,11 +9,11 @@ import uz.raximov.pcmarketapp.entity.Address;
 @RepositoryRestResource(path = "address")
 public interface AddressRepository extends JpaRepository<Address, Integer> {
 
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends Address> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends Address> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 }

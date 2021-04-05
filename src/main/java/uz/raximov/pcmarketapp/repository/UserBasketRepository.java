@@ -8,11 +8,11 @@ import uz.raximov.pcmarketapp.entity.UserBasket;
 
 @RepositoryRestResource(path = "userBasket")
 public interface UserBasketRepository extends JpaRepository<UserBasket, Integer> {
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends UserBasket> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends UserBasket> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 }

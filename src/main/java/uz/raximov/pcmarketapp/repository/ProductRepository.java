@@ -13,13 +13,13 @@ import java.util.List;
 
 @RepositoryRestResource(path = "product")
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
-    @Override
-    <S extends Product> S save(S s);
-
-    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
-    @Override
-    void deleteById(Integer integer);
+//    @PreAuthorize(value = "hasAnyRole('SUPER_ADMIN','MODERATOR')")
+//    @Override
+//    <S extends Product> S save(S s);
+//
+//    @PreAuthorize(value = "hasRole('SUPER_ADMIN')")
+//    @Override
+//    void deleteById(Integer integer);
 
     @RestResource(path="searchByName", rel="searchByName")
     List<Product> findAllByNameContainsIgnoreCase(@Param("searchByName") String searchByName);
